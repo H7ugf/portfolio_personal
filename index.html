@@ -22,6 +22,7 @@
             background: linear-gradient(135deg, #f5f7fa 0%, #e4e7f1 100%);
             color: var(--text-color);
             line-height: 1.7;
+            padding-bottom: 50px;
         }
         
         .container {
@@ -144,6 +145,7 @@
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
             max-width: 85%;
             transition: transform 0.5s ease;
+            border: 5px solid white;
         }
         
         .featured-image img:hover {
@@ -325,6 +327,30 @@
             transform: translateY(0);
         }
         
+        /* رسائل التأكيد */
+        .alert-success {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 10000;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            animation: slideIn 0.5s, fadeOut 0.5s 4.5s;
+        }
+        
+        @keyframes slideIn {
+            from { right: -100%; opacity: 0; }
+            to { right: 20px; opacity: 1; }
+        }
+        
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+        
         /* تصميم متجاوب */
         @media (max-width: 992px) {
             .featured-text h1 {
@@ -362,9 +388,93 @@
                 font-size: 2.2rem;
             }
         }
+        
+        /* تصميم جديد للسيرة الذاتية */
+        .cv-preview {
+            max-width: 300px;
+            margin: 20px auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .cv-preview:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        
+        .cv-preview img {
+            width: 100%;
+            display: block;
+        }
+        
+        .cv-preview .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(52, 152, 219, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .cv-preview:hover .overlay {
+            opacity: 1;
+        }
+        
+        .cv-preview .overlay i {
+            font-size: 3rem;
+            color: white;
+        }
+        
+        .cv-badge {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--accent-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            animation: pulse 2s infinite;
+        }
+        
+        .cv-badge i {
+            margin-left: 8px;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pdf-viewer {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: none;
+        }
     </style>
 </head>
 <body>
+    <!-- شارة تحميل السيرة الذاتية -->
+    <div class="cv-badge">
+        <i class="uil uil-file-download-alt"></i>
+        السيرة الذاتية متاحة للتحميل
+    </div>
+
     <div class="container">
         <nav id="header" class="navbar navbar-expand-lg navbar-light py-3">
             <div class="container-fluid">
@@ -419,9 +529,17 @@
                         <a href="https://www.linkedin.com/in/mohammed-ali-hezam-709a1824b" class="text-dark" target="_blank"><i class="uil uil-linkedin-alt"></i></a>
                         <a href="https://github.com/H7ugf/project_hcj.git" class="text-dark" target="_blank"><i class="uil uil-github-alt"></i></a>
                     </div>
+                    
+                    <!-- معاينة السيرة الذاتية -->
+                    <div class="cv-preview mt-4">
+                        <img src="https://images.unsplash.com/photo-1531346878377-a5be20888e57?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="معاينة السيرة الذاتية">
+                        <div class="overlay">
+                            <i class="uil uil-eye"></i>
+                        </div>
+                    </div>
                 </div>
                 <div class="featured-image col-12 col-lg-6 d-flex justify-content-center reveal">
-                    <img src="profile.png" alt="avatar" class="img-fluid">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="avatar" class="img-fluid">
                 </div>
                 <div class="scroll-icon-box w-100 d-flex justify-content-center mt-5">
                     <a href="#about" class="text-decoration-none text-dark">
@@ -589,9 +707,7 @@
                                 <p><i class="uil uil-phone me-2 text-primary"></i> 967717200479+</p>
                                 <p><i class="uil uil-linkedin-alt me-2 text-primary"></i> <a href="https://www.linkedin.com/in/mohammed-ali-hezam-709a1824b" target="_blank" class="text-decoration-none">linkedin.com/in/mohammed-ali-hezam-709a1824b</a></p>
                             </div>
-                            <form action="https://formsubmit.co/ali.mohammedezam717@gmail.com" method="POST">
-                                <input type="hidden" name="_captcha" value="false">
-                                <input type="hidden" name="_next" value="https://formsubmit.co/thanks.html">
+                            <form id="contactForm">
                                 <div class="row mb-3">
                                     <div class="col-md-6 mb-3 mb-md-0">
                                         <input type="text" name="name" class="form-control" placeholder="الاسم" required>
@@ -652,36 +768,25 @@
             
             downloadButtons.forEach(button => {
                 button.addEventListener('click', function() {
-                    // إنشاء ملف PDF وهمي (في تطبيق حقيقي، هذا سيكون رابطًا لملف حقيقي)
-                    const pdfContent = "هذا ملف وهمي للسيرة الذاتية. في التطبيق الحقيقي، سيتم تحميل ملف PDF الفعلي.";
-                    const blob = new Blob([pdfContent], { type: 'application/pdf' });
-                    const url = URL.createObjectURL(blob);
+                    // اسم ملف السيرة الذاتية الخاص بك
+                    const fileName = 'السيرة_الذاتية_محمد_علي_حزام_.pdf';
                     
+                    // إنشاء رابط تنزيل
                     const a = document.createElement('a');
-                    a.href = url;
-                    a.download = 'السيرة_الذاتية_محمد_علي_حزام_.pdf';
+                    a.href = fileName;
+                    a.download = fileName;
+                    
+                    // إضافة الرابط إلى الصفحة والنقر عليه
                     document.body.appendChild(a);
                     a.click();
                     
-                    // التنظيف
+                    // تنظيف الرابط بعد التنزيل
                     setTimeout(() => {
                         document.body.removeChild(a);
-                        URL.revokeObjectURL(url);
                     }, 100);
                     
                     // إظهار رسالة تأكيد
-                    const confirmation = document.createElement('div');
-                    confirmation.innerHTML = `
-                        <div style="position: fixed; bottom: 20px; right: 20px; background: #2ecc71; color: white; padding: 15px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 1000;">
-                            <i class="uil uil-check-circle" style="margin-left: 8px;"></i>
-                            تم تحميل السيرة الذاتية بنجاح!
-                        </div>
-                    `;
-                    document.body.appendChild(confirmation);
-                    
-                    setTimeout(() => {
-                        document.body.removeChild(confirmation);
-                    }, 3000);
+                    showAlert('جاري تحميل السيرة الذاتية...', 'success');
                 });
             });
             
@@ -732,6 +837,37 @@
                     }
                 });
             });
+            
+            // معالجة نموذج التواصل
+            const contactForm = document.getElementById('contactForm');
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // إظهار رسالة نجاح
+                showAlert('تم إرسال رسالتك بنجاح! سأتواصل معك قريبًا.', 'success');
+                
+                // إعادة تعيين النموذج
+                contactForm.reset();
+            });
+            
+            // دالة لعرض الرسائل
+            function showAlert(message, type) {
+                const alertDiv = document.createElement('div');
+                alertDiv.className = `alert-success bg-${type === 'success' ? 'success' : 'danger'} text-white d-flex align-items-center`;
+                
+                alertDiv.innerHTML = `
+                    <i class="uil uil-${type === 'success' ? 'check-circle' : 'exclamation-triangle'} fs-4 me-2"></i>
+                    <span>${message}</span>
+                `;
+                
+                document.body.appendChild(alertDiv);
+                
+                // إزالة الرسالة بعد 5 ثوانٍ
+                setTimeout(() => {
+                    alertDiv.remove();
+                }, 5000);
+            }
         });
     </script>
 </body>
