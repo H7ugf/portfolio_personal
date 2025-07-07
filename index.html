@@ -6,709 +6,7 @@
     <title>محمد علي حزام عبده - السيرة الذاتية</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
-            --text-color: #34495e;
-            --transition: all 0.3s ease;
-            --gradient-start: #3498db;
-            --gradient-end: #e74c3c;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7f1 100%);
-            color: var(--text-color);
-            line-height: 1.7;
-            padding-bottom: 50px;
-            overflow-x: hidden;
-        }
-        
-        .container {
-            max-width: 1200px;
-        }
-        
-        /* تحسين شريط التنقل */
-        #header {
-            background: rgba(255, 255, 255, 0.97);
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-            border-radius: 0 0 15px 15px;
-            transition: var(--transition);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .navbar-brand {
-            font-weight: 800;
-            font-size: 1.8rem;
-            color: var(--primary-color);
-            position: relative;
-        }
-        
-        .navbar-brand span {
-            color: var(--accent-color);
-        }
-        
-        .navbar-brand::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 0;
-            height: 3px;
-            background: var(--accent-color);
-            transition: var(--transition);
-        }
-        
-        .navbar-brand:hover::after {
-            width: 100%;
-        }
-        
-        .nav-link {
-            font-weight: 600;
-            color: var(--dark-color);
-            position: relative;
-            padding: 0.5rem 1rem;
-            transition: var(--transition);
-        }
-        
-        .nav-link:hover, .nav-link.active {
-            color: var(--secondary-color);
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 0;
-            height: 3px;
-            background: var(--secondary-color);
-            transition: var(--transition);
-        }
-        
-        .nav-link:hover::after, .nav-link.active::after {
-            width: 100%;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
-            border: none;
-            transition: var(--transition);
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            border-radius: 50px;
-            padding: 12px 28px;
-        }
-        
-        .btn-primary:hover {
-            background: linear-gradient(45deg, #2980b9, #c0392b);
-            transform: translateY(-3px);
-            box-shadow: 0 7px 15px rgba(52, 152, 219, 0.3);
-        }
-        
-        .btn-outline-primary {
-            color: var(--secondary-color);
-            border-color: var(--secondary-color);
-            transition: var(--transition);
-            border-radius: 50px;
-            padding: 12px 28px;
-            font-weight: 600;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .btn-outline-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(52, 152, 219, 0.1), transparent);
-            transition: 0.5s;
-        }
-        
-        .btn-outline-primary:hover::before {
-            left: 100%;
-        }
-        
-        .btn-outline-primary:hover {
-            background-color: var(--secondary-color);
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 7px 15px rgba(52, 152, 219, 0.3);
-        }
-        
-        .featured-box {
-            min-height: 100vh;
-            padding-top: 80px;
-            position: relative;
-        }
-        
-        .featured-text h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            color: var(--primary-color);
-            position: relative;
-            padding-bottom: 15px;
-        }
-        
-        .featured-text h1::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 100px;
-            height: 5px;
-            background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
-            border-radius: 3px;
-        }
-        
-        .featured-text h1 span {
-            background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .featured-text .lead {
-            font-size: 1.25rem;
-            color: var(--text-color);
-            background: rgba(255, 255, 255, 0.7);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            backdrop-filter: blur(5px);
-        }
-        
-        .featured-image {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .featured-image::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border: 5px solid var(--secondary-color);
-            top: 20px;
-            left: -20px;
-            border-radius: 10px;
-            z-index: -1;
-        }
-        
-        .featured-image img {
-            border-radius: 10px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-            max-width: 85%;
-            transition: transform 0.5s ease;
-            border: 5px solid white;
-        }
-        
-        .featured-image img:hover {
-            transform: scale(1.03) rotate(1deg);
-        }
-        
-        .social_icons a {
-            transition: var(--transition);
-            width: 45px;
-            height: 45px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin: 0 5px;
-        }
-        
-        .social_icons a:hover {
-            background: var(--secondary-color);
-            color: white !important;
-            transform: translateY(-5px);
-        }
-        
-        .scroll-icon-box {
-            position: absolute;
-            bottom: 50px;
-            text-align: center;
-            width: 100%;
-        }
-        
-        .scroll-icon-box i {
-            font-size: 2rem;
-            animation: bounce 2s infinite;
-            color: var(--secondary-color);
-        }
-        
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-            40% {transform: translateY(-20px);}
-            60% {transform: translateY(-10px);}
-        }
-        
-        .section {
-            padding: 100px 0;
-            position: relative;
-        }
-        
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%233498db" fill-opacity="0.05" d="M0,192L48,208C96,224,192,256,288,245.3C384,235,480,181,576,181.3C672,181,768,235,864,234.7C960,235,1056,181,1152,160C1248,139,1344,149,1392,154.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
-            background-size: cover;
-            background-position: center;
-            z-index: -1;
-            opacity: 0.3;
-        }
-        
-        .top-header {
-            position: relative;
-            padding-bottom: 30px;
-            margin-bottom: 50px;
-        }
-        
-        .top-header h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
-        }
-        
-        .top-header h1::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 50%;
-            transform: translateX(50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
-            border-radius: 2px;
-        }
-        
-        .skills-box {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .skills-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 5px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-end));
-        }
-        
-        .skills-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .skill-item {
-            font-size: 0.9rem;
-            padding: 8px 15px;
-            border-radius: 30px;
-            transition: var(--transition);
-            display: inline-block;
-            margin-bottom: 8px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .skill-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 100%;
-            background: var(--secondary-color);
-            transition: var(--transition);
-            z-index: -1;
-        }
-        
-        .skill-item:hover::before {
-            width: 100%;
-        }
-        
-        .skill-item:hover {
-            color: white !important;
-            transform: translateY(-3px);
-        }
-        
-        .project-box {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-            height: 100%;
-            transition: var(--transition);
-            padding: 30px;
-            position: relative;
-            overflow: hidden;
-            border-left: 5px solid var(--secondary-color);
-        }
-        
-        .project-box::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(52, 152, 219, 0.05) 0%, rgba(231, 76, 60, 0.05) 100%);
-            z-index: 0;
-        }
-        
-        .project-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .project-box i {
-            color: var(--secondary-color);
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            display: inline-block;
-        }
-        
-        .card {
-            border-radius: 15px;
-            border: none;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: var(--transition);
-            overflow: hidden;
-        }
-        
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-        }
-        
-        form .form-control {
-            border-radius: 10px;
-            padding: 12px 15px;
-            border: 1px solid #e0e0e0;
-            transition: var(--transition);
-        }
-        
-        form .form-control:focus {
-            border-color: var(--secondary-color);
-            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
-        }
-        
-        footer {
-            background: var(--primary-color);
-            color: white;
-            padding: 50px 0 20px;
-            border-radius: 15px 15px 0 0;
-            margin-top: 100px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23000" fill-opacity="0.1" d="M0,192L48,208C96,224,192,256,288,245.3C384,235,480,181,576,181.3C672,181,768,235,864,234.7C960,235,1056,181,1152,160C1248,139,1344,149,1392,154.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
-            background-size: cover;
-            background-position: center;
-            z-index: 0;
-        }
-        
-        .footer-social-icons a {
-            color: white;
-            margin: 0 10px;
-            transition: var(--transition);
-            width: 45px;
-            height: 45px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-        }
-        
-        .footer-social-icons a:hover {
-            background: var(--secondary-color);
-            transform: translateY(-5px);
-        }
-        
-        .bottom-footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
-            margin-top: 30px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .cv-download-btn {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cv-download-btn::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.2);
-            transition: all 0.6s ease;
-            transform: skewX(-25deg);
-        }
-        
-        .cv-download-btn:hover::after {
-            left: 100%;
-        }
-        
-        /* تأثيرات الظهور */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 1s ease;
-        }
-        
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* رسائل التأكيد */
-        .alert-success {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 10000;
-            padding: 15px 25px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            display: flex;
-            align-items: center;
-            animation: slideIn 0.5s, fadeOut 0.5s 4.5s;
-            background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
-            color: white;
-        }
-        
-        @keyframes slideIn {
-            from { right: -100%; opacity: 0; }
-            to { right: 20px; opacity: 1; }
-        }
-        
-        @keyframes fadeOut {
-            from { opacity: 1; }
-            to { opacity: 0; }
-        }
-        
-        /* تصميم متجاوب */
-        @media (max-width: 992px) {
-            .featured-text h1 {
-                font-size: 2.8rem;
-            }
-            
-            .top-header h1 {
-                font-size: 2.5rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .featured-box {
-                padding-top: 40px;
-                text-align: center;
-            }
-            
-            .featured-text h1 {
-                font-size: 2.2rem;
-            }
-            
-            .d-flex {
-                justify-content: center;
-            }
-            
-            .social_icons {
-                justify-content: center;
-            }
-            
-            .featured-image {
-                margin-top: 40px;
-            }
-            
-            .featured-image::before {
-                top: 10px;
-                left: -10px;
-            }
-            
-            .section {
-                padding: 60px 0;
-            }
-            
-            .top-header h1 {
-                font-size: 2.2rem;
-            }
-            
-            .project-box {
-                margin-bottom: 20px;
-            }
-        }
-        
-        /* تصميم جديد للسيرة الذاتية */
-        .cv-preview {
-            max-width: 300px;
-            margin: 20px auto;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            position: relative;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .cv-preview:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-        }
-        
-        .cv-preview img {
-            width: 100%;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-        
-        .cv-preview:hover img {
-            transform: scale(1.1);
-        }
-        
-        .cv-preview .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(52, 152, 219, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-        
-        .cv-preview:hover .overlay {
-            opacity: 1;
-        }
-        
-        .cv-preview .overlay i {
-            font-size: 3rem;
-            color: white;
-        }
-        
-        .cv-badge {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: linear-gradient(45deg, var(--accent-color), #d35400);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            animation: pulse 2s infinite;
-            font-weight: 600;
-            cursor: pointer;
-        }
-        
-        .cv-badge i {
-            margin-right: 8px;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-            50% { transform: scale(1.05); box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
-            100% { transform: scale(1); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-        }
-        
-        .pdf-viewer {
-            width: 100%;
-            height: 500px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            margin-top: 20px;
-            display: none;
-        }
-        
-        /* تأثيرات إضافية */
-        .section-title-icon {
-            position: absolute;
-            top: 20px;
-            right: 0;
-            font-size: 5rem;
-            opacity: 0.05;
-            z-index: -1;
-        }
-        
-        .floating {
-            animation: floating 3s ease-in-out infinite;
-        }
-        
-        @keyframes floating {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        /* تحسينات للوضع الليلي */
-        @media (prefers-color-scheme: dark) {
-            body {
-                background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-                color: #e6e6e6;
-            }
-            
-            .featured-text .lead {
-                background: rgba(30, 30, 46, 0.7);
-                color: #e6e6e6;
-            }
-            
-            .skills-box, .project-box, .card {
-                background: #1e1e2e;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-            }
-            
-            .social_icons a {
-                background: rgba(30, 30, 46, 0.8);
-                color: #e6e6e6;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- شارة تحميل السيرة الذاتية -->
@@ -770,8 +68,6 @@
                     <div class="social_icons d-flex gap-3 fs-3">
                         <a href="https://www.linkedin.com/in/mohammed-ali-hezam-709a1824b" class="text-dark" target="_blank"><i class="uil uil-linkedin-alt"></i></a>
                         <a href="https://github.com/H7ugf/project_hcj.git" class="text-dark" target="_blank"><i class="uil uil-github-alt"></i></a>
-                        <a href="#" class="text-dark" target="_blank"><i class="uil uil-twitter-alt"></i></a>
-                        <a href="#" class="text-dark" target="_blank"><i class="uil uil-instagram"></i></a>
                     </div>
                     
                     <!-- معاينة السيرة الذاتية -->
@@ -782,11 +78,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="featured-image col-12 col-lg-6 d-flex justify-content-center reveal floating">
-                    <img src="profile.png" alt="avatar" class="img-fluid">
+                <div class="featured-image col-12 col-lg-6 d-flex justify-content-center reveal">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="avatar" class="img-fluid">
                 </div>
                 <div class="scroll-icon-box w-100 d-flex justify-content-center mt-5">
-                    <a href="#about" class="text-decoration-none">
+                    <a href="#about" class="text-decoration-none text-dark">
                         <i class="uil uil-mouse-alt fs-4"></i>
                         <p class="mb-0">مرر للأسفل</p>
                     </a>
@@ -796,7 +92,6 @@
             <section class="section" id="about">
                 <div class="top-header text-center mb-5">
                     <h1 class="display-4 fw-bold">الملخص</h1>
-                    <i class="uil uil-user section-title-icon"></i>
                 </div>
                 <div class="row">
                     <div class="col-12 col-lg-6 mb-4 mb-lg-0 reveal">
@@ -858,12 +153,11 @@
             <section class="section" id="projects">
                 <div class="top-header text-center mb-5">
                     <h1 class="display-4 fw-bold">الخبرة المهنية</h1>
-                    <i class="uil uil-briefcase-alt section-title-icon"></i>
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-6 mb-4 reveal">
-                        <div class="project-box">
-                            <i class="uil uil-briefcase-alt fs-2 mb-3"></i>
+                        <div class="project-box p-4">
+                            <i class="uil uil-briefcase-alt fs-2 mb-3 text-primary"></i>
                             <h3 class="h5 mb-2">مطوّر مشاريع تقنية</h3>
                             <label class="text-muted d-block mb-3">مشاريع شخصية | تعز، اليمن | 2021 – 2025</label>
                             <ul class="list-unstyled">
@@ -875,8 +169,8 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-6 mb-4 reveal">
-                        <div class="project-box">
-                            <i class="uil uil-mobile-android fs-2 mb-3"></i>
+                        <div class="project-box p-4">
+                            <i class="uil uil-mobile-android fs-2 mb-3 text-primary"></i>
                             <h3 class="h5 mb-2">مطوّر تطبيقات هاتف محمول</h3>
                             <label class="text-muted d-block mb-3">عمل حر | تعز، اليمن | 2023 – 2025</label>
                             <ul class="list-unstyled">
@@ -892,7 +186,6 @@
             <section class="section" id="education">
                 <div class="top-header text-center mb-5">
                     <h1 class="display-4 fw-bold">التعليم</h1>
-                    <i class="uil uil-graduation-cap section-title-icon"></i>
                 </div>
                 <div class="row">
                     <div class="col-12 col-lg-6 mb-4 mb-lg-0 reveal">
@@ -929,15 +222,12 @@
             <section class="section" id="achievements">
                 <div class="top-header text-center mb-5">
                     <h1 class="display-4 fw-bold">الإنجازات</h1>
-                    <i class="uil uil-trophy section-title-icon"></i>
                 </div>
                 <div class="row reveal">
                     <div class="col-12">
                         <ul class="list-unstyled">
                             <li class="mb-2"><i class="uil uil-trophy me-2 text-warning"></i> التخرج بدرجة امتياز مع مرتبة الشرف 2025 - جامعة الحكمة، تعز، اليمن</li>
                             <li class="mb-2"><i class="uil uil-trophy me-2 text-warning"></i> اجتياز دبلوم المحاسبة المالية بنجاح مع تطبيقات عملية متميزة 2022 - مؤسسة تعليمية محلية، اليمن</li>
-                            <li class="mb-2"><i class="uil uil-trophy me-2 text-warning"></i> تطوير مشروع تخرج مميز باستخدام الذكاء الاصطناعي لتحسين تجربة المستخدم</li>
-                            <li class="mb-2"><i class="uil uil-trophy me-2 text-warning"></i> المشاركة في مسابقة البرمجة الوطنية وحصولي على المركز الثالث</li>
                         </ul>
                     </div>
                 </div>
@@ -947,7 +237,6 @@
                 <div class="top-header text-center mb-5">
                     <h1 class="display-4 fw-bold">تواصل معي</h1>
                     <p class="lead">هل لديك مشروع أو استفسار؟ تواصل معي هنا</p>
-                    <i class="uil uil-envelopes section-title-icon"></i>
                 </div>
                 <div class="row justify-content-center reveal">
                     <div class="col-12 col-lg-8">
@@ -1003,8 +292,6 @@
             <div class="footer-social-icons mb-3 fs-4">
                 <a href="https://www.linkedin.com/in/mohammed-ali-hezam-709a1824b" class="text-light" target="_blank"><i class="uil uil-linkedin-alt"></i></a>
                 <a href="https://github.com/H7ugf/project_hcj.git" class="text-light" target="_blank"><i class="uil uil-github-alt"></i></a>
-                <a href="#" class="text-light" target="_blank"><i class="uil uil-twitter-alt"></i></a>
-                <a href="#" class="text-light" target="_blank"><i class="uil uil-instagram"></i></a>
             </div>
             <div class="bottom-footer">
                 <p class="text-white-50">جميع الحقوق محفوظة &copy; <a href="#home" class="text-decoration-none text-white">محمد علي حزام عبده</a></p>
@@ -1018,7 +305,6 @@
         // وظيفة تحميل السيرة الذاتية
         document.addEventListener('DOMContentLoaded', function() {
             const downloadButtons = document.querySelectorAll('.cv-download-btn');
-            const cvBadge = document.querySelector('.cv-badge');
             
             downloadButtons.forEach(button => {
                 button.addEventListener('click', function() {
@@ -1042,28 +328,6 @@
                     // إظهار رسالة تأكيد
                     showAlert('جاري تحميل السيرة الذاتية...', 'success');
                 });
-            });
-            
-            cvBadge.addEventListener('click', function() {
-                // اسم ملف السيرة الذاتية الخاص بك
-                const fileName = 'السيرة_الذاتية_محمد_علي_حزام_.pdf';
-                
-                // إنشاء رابط تنزيل
-                const a = document.createElement('a');
-                a.href = fileName;
-                a.download = fileName;
-                
-                // إضافة الرابط إلى الصفحة والنقر عليه
-                document.body.appendChild(a);
-                a.click();
-                
-                // تنظيف الرابط بعد التنزيل
-                setTimeout(() => {
-                    document.body.removeChild(a);
-                }, 100);
-                
-                // إظهار رسالة تأكيد
-                showAlert('جاري تحميل السيرة الذاتية...', 'success');
             });
             
             // تأثيرات الظهور عند التمرير
