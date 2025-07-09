@@ -242,6 +242,44 @@ body {
     border: none;
 }
 
+/* تأثيرات انتقالية على البطاقات */
+.project-card, .card, .btn {
+    transition: box-shadow 0.3s, transform 0.3s, background 0.3s, color 0.3s;
+}
+.project-card:hover, .card:hover {
+    box-shadow: 0 12px 36px rgba(52,152,219,0.18);
+    transform: translateY(-7px) scale(1.04);
+}
+.btn:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 4px 16px rgba(52,152,219,0.10);
+}
+/* زر العودة للأعلى */
+#backToTop {
+    position: fixed;
+    bottom: 32px;
+    left: 32px;
+    z-index: 9999;
+    background: var(--secondary-color);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    box-shadow: 0 2px 12px rgba(44,62,80,0.10);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+#backToTop.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 /* ===================== Responsive Design ===================== */
 
 /* الهواتف الصغيرة */
@@ -330,4 +368,72 @@ body, html {
   overflow-x: hidden;
 }
 
-/* تم التحويل إلى Bootstrap. إذا احتجت أي تخصيص أضفه هنا */ 
+/* تم التحويل إلى Bootstrap. إذا احتجت أي تخصيص أضفه هنا */
+
+/* === تنسيقات قسم المشاريع والمودال === */
+#fake-projects .card {
+    transition: box-shadow 0.3s, transform 0.3s;
+    border-radius: 15px;
+    border: none;
+}
+#fake-projects .card:hover {
+    box-shadow: 0 8px 32px rgba(52, 152, 219, 0.15);
+    transform: translateY(-5px) scale(1.03);
+}
+#fake-projects .card-img-top {
+    border-radius: 15px 15px 0 0;
+    height: 220px;
+    object-fit: cover;
+}
+#fake-projects .card-title {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+#fake-projects .card-text {
+    color: var(--text-color);
+}
+/* مودال المشروع */
+#projectModal .modal-content {
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(44, 62, 80, 0.15);
+    border: none;
+}
+#projectModal .modal-title {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+#projectModalImg {
+    max-height: 350px;
+    object-fit: contain;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* تخصيص معرض الصور داخل المودال */
+#projectModalGallery .carousel-inner img {
+    max-height: 320px;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(44,62,80,0.10);
+}
+#projectModalGallery .carousel {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(52,152,219,0.08);
+    padding: 8px;
+}
+#projectModalFeatures li {
+    margin-bottom: 6px;
+    font-size: 1.05rem;
+}
+#projectModalTech {
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+#projectModalDate {
+    color: #888;
+    font-size: 0.98rem;
+}
+#projectModalLink {
+    margin-top: 8px;
+} 
